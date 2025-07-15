@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <div className='py-5 bg-[#1A1919]'>
            <footer className="">
-           <div className="flex flex-col  text-primary container mx-auto border-b border-secondary dark:border-secondary justify-between lg:flex-row gap-4 lg:gap-10 text-base-content py-10 px-2 lg:px-0">
+           <div className="flex flex-col container mx-auto border-b border-secondary dark:border-secondary justify-between lg:flex-row gap-4 lg:gap-10 text-base-content py-10 px-2 lg:px-0">
             <div className='flex-[30%] space-y-4 pr-8 '>
                         <h2>
                 <NavLink className='text-3xl font-bold ' to='/'>Book Vibes</NavLink>

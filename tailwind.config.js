@@ -13,6 +13,10 @@ export default {
           accent: 'var(--color-accent)', // Maps to #04d980
           blue: 'var(--color-blue)', // Maps to #50B1C9
         },
+
+        fontFamily: {
+          'playfair-display': ["Playfair Display", 'serif'], // Custom font utility
+        }
       },
     },
     plugins: [('daisyui')],

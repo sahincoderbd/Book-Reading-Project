@@ -4,7 +4,7 @@ import { NavLink } from 'react-router';
 const Header = () => {
     return (
         <div className='container mx-auto'>
-            <div className="navbar bg-base-100 shadow-sm ">
+            <div className="navbar ">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -29,8 +29,8 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end gap-4 ">
-    <a className="btn bg-accent text-primary text-base cursor-pointer">Sign In</a>
-    <a className="btn bg-blue text-primary text-base cursor-pointer">Sign Up</a>
+    <NavLink className="btn bg-accent  h-12 text-primary text-base cursor-pointer rounded-md">Sign In</NavLink>
+    <NavLink className="btn bg-blue  h-12 text-primary text-base cursor-pointer rounded-md">Sign Up</NavLink>
   </div>
 </div>
         </div>
