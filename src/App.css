@@ -7,8 +7,15 @@
     --color-accent:#23BE0A;
     --color-blue: #50B1C9;
 }
+
 h1, h2, h3, h4, h5, h6 {
     font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+p, span, a, li, button {
+    font-family: "Work Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;

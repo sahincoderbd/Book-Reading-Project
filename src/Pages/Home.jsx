@@ -1,21 +1,34 @@
 import Button from 'daisyui/components/button';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import hero from '../assets/pngwing 1.png';
-import { NavLink, useLoaderData } from 'react-router';
+import { NavLink } from 'react-router';
 import Book from '../Layout/Component/Book';
 const Home = () => {
 
-    const allBooks=useLoaderData();
+  
+     const [allBooks, setAllBooks] = useState([]);
+     const [bookLength, setBookLength] = useState(8);
+     useEffect(()=>{
+        fetch('books.json')
+        .then(res=>res.json())
+        .then(data=>{
+            setAllBooks(data);
+        })
 
+     },[])
 
+     const handleShowDetails = () => {
+        setBookLength(allBooks.length);
+     }
+   
     return (
-        <div className='container mx-auto  bg-[#1313130D] rounded-xl mt-6  space-y-3'>
+        <div className='container mx-auto  mt-4  space-y-3'>
             {/* hero section */}
-            <div className='min-h-[450px] flex flex-col px-7 py-10 lg:flex-row gap-4 items-center justify-between
+            <div className='min-h-[450px] rounded-xl bg-[#1313130D] dark:bg-gray-700 flex flex-col px-7 py-10 lg:flex-row gap-4 items-center justify-between dark:border dark:border-gray-600
             '>
                 <div className='flex flex-col flex-nowrap gap-4 items-start'>
                 <h1 className='font-[playfair-display] text-3xl lg:text-7xl font-bold'>Books to freshen up <br></br>your bookshelf</h1>
-                <NavLink className='btn bg-accent h-12 text-primary text-base cursor-pointer rounded-md'>View The List</NavLink>
+                <NavLink className='btn bg-accent h-12 text-primary text-base font-normal cursor-pointer rounded-md' to='/listed-books'>View The List</NavLink>
                 </div>
                 <div>
                     <img src={hero} alt="hero" className='w-full' />
@@ -24,16 +37,18 @@ const Home = () => {
 
             {/* Books section */}
 
-            <div className=' text-center space-y-3 py-10'>
+            <div className=' text-center space-y-5 py-10'>
                 <h2 className='text-4xl font-extrabold'>Books</h2>
 
 
                 {/* */}
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 '>
                 {
-                    allBooks.map(book=><Book key={book.id} book={book}></Book>)
+                    allBooks.slice(0,bookLength).map(book=><Book key={book.id} book={book}></Book>)
                 }
+                
                 </div>
+                <button onClick={handleShowDetails}  className={`btn mx-auto bg-accent text-primary px-5 py-3 text-base ${bookLength===allBooks.length && 'hidden'}`} >Show All Books</button>
             </div>
         </div>
     );

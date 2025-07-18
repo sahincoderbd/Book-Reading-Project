@@ -3,7 +3,7 @@ import { NavLink } from 'react-router';
 
 const Header = () => {
     return (
-        <div className='container mx-auto'>
+        <div className='container mx-auto mt-3'>
             <div className="navbar ">
   <div className="navbar-start">
     <div className="dropdown">
