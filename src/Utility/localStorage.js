@@ -24,10 +24,11 @@ console.log('Book already added to read');
 
 }
 
-// Add to read book to LS
+// Add to wishlist book to LS
 const addWishlistToLs=id=>{
   const storedWishlistedItems= getWishListFromLs();
   const exists=storedWishlistedItems.find(ItemId=>ItemId===id);
+
   if(!exists){
     storedWishlistedItems.push(id);
     localStorage.setItem('wishListedBooks',JSON.stringify(storedWishlistedItems));

@@ -15,18 +15,20 @@ const BookDetails = () => {
 
     const warningSuccess=(readOrWishList)=>toast.success(`Book Successfully Added to ${readOrWishList}`);
     const warningExist=(readOrWishList)=>toast.error(`Book Already been Added to ${readOrWishList} . so you cannot be able to add again`);
-    
+   
 
     const handleAddToRead = (id) => {
    
         const getStoredFromReadLS=getReadItemsFromLs();
 
         const existsReadList=getStoredFromReadLS.find(readedBookId=>readedBookId===id);
+        
         // Logic to add the book to the "Read" list
 
         if(!existsReadList){       
         addToReadLs(id);
         warningSuccess('Read');
+       
         }
         else{
             warningExist('Read');
@@ -35,18 +37,20 @@ const BookDetails = () => {
     
     const handleAddToWishlist=(id)=>{
         const getStoredFromWishlistLS=getWishListFromLs();
-        const getStoredFromReadLS=getReadItemsFromLs();
+    const getStoredFromReadLS=getReadItemsFromLs();
         
         const existsWishlist=getStoredFromWishlistLS.find(readedBookId=>readedBookId===id);
         const existsReadList=getStoredFromReadLS.find(readedBookId=>readedBookId===id);
 
         if(!existsWishlist && !existsReadList){
+
         addWishlistToLs(id);
         warningSuccess('Wishlist');
         }
         else{
             warningExist('WishList Or Read');
         }
+
        
        
     }

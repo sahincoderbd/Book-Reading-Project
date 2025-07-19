@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router';
+import { NavLink,Link } from 'react-router';
 
 const Header = () => {
     return (
@@ -20,13 +20,13 @@ const Header = () => {
         
       </ul>
     </div>
-    <NavLink to='/' className="text-2xl lg:text-4xl font-bold">Book Vibe</NavLink>
+    <Link to='/' className="font-[playfair-display] text-3xl lg:text-4xl font-bold"><h2>Book Vibe</h2></Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 gap-10 text-lg">
-    <NavLink to='/'> Home </NavLink>
-       <NavLink to='/listed-books'> Listed Books </NavLink>
-       <NavLink to='/pages-to-read'> Pages to Read </NavLink>
+    <NavLink className='focus:border-2 rounded-md border-accent px-3 py-1 focus:text-accent' to='/'> Home </NavLink>
+       <NavLink className='focus:border-2 rounded-md border-accent px-3 py-1 focus:text-accent' to='/listed-books'> Listed Books </NavLink>
+       <NavLink className='focus:border-2 rounded-md border-accent px-3 py-1 focus:text-accent' to='/pages-to-read'> Pages to Read </NavLink>
     </ul>
   </div>
   <div className="navbar-end gap-4 ">
