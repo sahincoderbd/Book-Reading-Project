@@ -11,6 +11,7 @@ import ListedBooks from './Pages/ListedBooks.jsx';
 import PagesToRead from './Pages/PagesToRead.jsx';
 import BookDetails from './Pages/BookDetails.jsx';
 import ErrorPage from './Pages/ErrorPage.jsx';
+import Login from './Pages/Login.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
     {
       path:'/book-details/:id',
       element:<BookDetails></BookDetails>
+    },
+    {
+      path:'/login',
+      element:<Login></Login>
     },
   
   ]

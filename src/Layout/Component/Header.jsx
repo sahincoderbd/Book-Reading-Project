@@ -30,7 +30,7 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end gap-4 ">
-    <NavLink className="btn bg-accent h-12 text-primary text-base cursor-pointer rounded-md hidden lg:flex">Sign In</NavLink>
+    <NavLink to='/login' className="btn bg-accent h-12 text-primary text-base cursor-pointer rounded-md hidden lg:flex">Sign In</NavLink>
     <NavLink className="btn bg-blue  h-12 text-primary text-base cursor-pointer rounded-md">Sign Up</NavLink>
   </div>
 </div>
