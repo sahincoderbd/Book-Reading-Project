@@ -53,7 +53,7 @@ const ListedBooks = () => {
 
 
     return (
-        <div className='text-center text-3xl font-bold py-10 flex flex-col flex-nowrap gap-4 container mx-auto'>
+        <div className='text-center text-3xl font-bold py-10 flex flex-col flex-nowrap gap-4 container mx-auto px-2 lg:px-0'> 
             <h2 className='text-3xl bg-gray-200 dark:bg-gray-700 rounded-sm py-3 '>Books</h2>
         
 
@@ -74,7 +74,7 @@ const ListedBooks = () => {
                     <SiBookstack/>
                     Read List
                 </label>
-                <div className="tab-content space-y-5 bg-gray-100 dark:bg-gray-800 border-gray-300 dark:border-gray-700 p-6">
+                <div className="tab-content space-y-5 bg-gray-100 dark:bg-gray-800 border-gray-300 dark:border-gray-700 p-3 lg:p-6">
 
                 {
                     allBooksOfReadList.map(book=><ListedBookItem key={book.id} book={book}></ListedBookItem>)
@@ -88,7 +88,7 @@ const ListedBooks = () => {
                     <IoMdHeart/>
                     Wish List
                 </label>
-                <div className="tab-content bg-gray-100 dark:bg-gray-800 border-gray-300 dark:border-gray-700 p-6 space-y-5">
+                <div className="tab-content bg-gray-100 dark:bg-gray-800 border-gray-300 dark:border-gray-700 space-y-5 p-3 lg:p-6">
 
                 {
                     allBooksOfWishlist.map(book=><ListedBookItem key={book.id} book={book}></ListedBookItem>)

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getReadItemsFromLs } from '../Utility/localStorage';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip,Scatter} from 'recharts';
+import { ResponsiveContainer,BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip,Scatter} from 'recharts';
 import { useLoaderData } from 'react-router';
 
 const PagesToRead = () => {
@@ -34,15 +34,18 @@ const PagesToRead = () => {
     
     return (
         <div className='text-center text-3xl font-bold py-5 container mx-auto'>
-           
-           <BarChart className=''
-      width={1500}
-      height={700}
+
+         <ResponsiveContainer width="100%"
+      height={600}>
+         <BarChart width={800}
+      height={600}
+      className=''
+      
       data={readListBooks}
       margin={{
-        top: 20,
-        right: 30,
-        left: 20,
+        top: 10,
+        right: 10,
+        left: 10,
         bottom: 5,
       }}
     >
@@ -58,8 +61,9 @@ const PagesToRead = () => {
       
        </BarChart>
 
-        <Scatter name="red" dataKey="red" fill="red" />
-      <Scatter name="blue" dataKey="blue" fill="blue" />    
+          </ResponsiveContainer>  
+          
+     
         </div>
     );
 };

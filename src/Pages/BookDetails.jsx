@@ -58,29 +58,29 @@ const BookDetails = () => {
 
 
     return (
-        <div className=' container mx-auto mt-4 py-10 space-y-3 flex flex-col lg:flex-row gap-4'> 
+        <div className=' container mx-auto mt-4 py-10 space-y-3 flex flex-col lg:flex-row gap-4 px-2 lg:px-0'> 
 
-                <div className='flex-1 bg-[#1313130D] dark:bg-gray-700 rounded-xl p-8 text-center'>
+                <div className='flex-1 bg-[#1313130D] dark:bg-gray-700 rounded-xl p-6 lg:p-8 text-center'>
                     <img className='items-stretch' src={image} alt={name} />
                 </div>   
-                <div className='flex-1 p-7 space-y-3'>
+                <div className='flex-1 space-y-3'>
                 <h2 className='text-4xl font-bold '>{name}</h2>
                 <p className='text-lg mt-3 '>By : {author}</p>
                 <hr className='border-dashed text-gray-300 dark:text-gray-600 '/>
                 <p className='text-lg mt-3 '>{category}</p>
                 <hr className='border-dashed text-gray-300 dark:text-gray-600 pb-3'/>
                 <p><strong>Review : </strong> {review}</p>
-                <div className='pb-5'>
-                    <strong>Tags: </strong> {
-                        tags.map((tag, index) => <a key={index} className='text-accent dark:bg-accent dark:text-primary bg-[#23BE0A0D] rounded-4xl px-3 py-2 text-sm mr-2' href='#'>#{tag}</a> )
+                <div className='pb-5 '>
+                    <strong className=''>Tags: </strong> {
+                        tags.map((tag, index) => <a key={index} className='text-accent dark:bg-accent dark:text-primary bg-[#23BE0A0D] rounded-4xl px-3 py-1.5 text-sm mr-2' href='#'>#{tag}</a> )
                     }
                 </div>
                 <hr className='border-dashed text-gray-300 dark:text-gray-600 pb-3'/>
 
-                <p className='flex justify-between flex-nowrap w-1/2'>Number of Pages: <strong>{totalPages}</strong></p>
-                <p className='flex justify-between flex-nowrap w-1/2'>Publisher: <strong>{publisher}</strong></p>
-                <p className='flex justify-between flex-nowrap w-1/2'>Year of Publishing: <strong>{yearOfPublishing}</strong></p>
-                <p className='flex justify-between flex-nowrap w-1/2'>Rating: <strong>{rating}</strong></p>
+                <p className='flex justify-between flex-nowrap w-full lg:w-1/2  '>Number of Pages: <strong className='text-lg '> {totalPages} </strong></p>
+                <p className='flex justify-between flex-nowrap w-full lg:w-1/2  '>Publisher: <strong className='text-lg '>  {publisher}</strong></p>
+                <p className='flex justify-between flex-nowrap w-full lg:w-1/2  '>Year of Publishing: <strong className='text-lg '> {yearOfPublishing}</strong></p>
+                <p className='flex justify-between flex-nowrap w-full lg:w-1/2  '>Rating: <strong className='text-lg '> {rating}</strong></p>
                     <div className='flex flex-nowrap gap-4 pt-5'>
                     <button onClick={()=>handleAddToRead(id)} className='btn bg-transparent border border-[#1313134D] dark:border-gray-500 px-6 py-3 text-base'>Read</button>
 

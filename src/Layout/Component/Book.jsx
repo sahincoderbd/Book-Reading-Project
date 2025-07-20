@@ -20,7 +20,7 @@ const Book = ({book}) => {
             <img src={image} alt={name} className='w-full h-64 object-contain bg-[#F3F3F3] dark:bg-gray-800 rounded-lg' />
             <div className='flex gap-2'>
             {
-                tags.map((tag, index) => <a key={index} className='text-accent dark:bg-accent dark:text-primary bg-[#23BE0A0D] rounded-4xl px-3 py-2 text-sm' href='#'>{tag}</a> )
+                tags.map((tag, index) => <a key={index} className='text-accent dark:bg-accent dark:text-primary bg-[#23BE0A0D] rounded-4xl px-3 py-1.5 text-sm' href='#'>{tag}</a> )
             }
             </div>
             
